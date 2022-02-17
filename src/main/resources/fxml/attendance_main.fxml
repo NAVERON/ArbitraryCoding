@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<!-- fx:controller="ui.MainController" -->
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <Button fx:id="login_btn" mnemonicParsing="false" onAction="#login" text="登陆">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin></Button>
+                  <Button fx:id="open_web_btn" mnemonicParsing="false" onAction="#open_web" text="打开网页端">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="test_db" mnemonicParsing="false" onAction="#print_db" text="测试数据库">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin></Button>
+                  <Button fx:id="minimum" mnemonicParsing="false" onAction="#minimum" text="最小化到托盘">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <Accordion minWidth="100.0" BorderPane.alignment="CENTER">
+        <panes>
+          <TitledPane animated="false" text="本地提交历史">
+               <content>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" prefViewportHeight="409.0" prefViewportWidth="146.0">
+                     <content>
+                        <VBox fx:id="submit_list" prefHeight="200.0" prefWidth="100.0" />
+                     </content>
+                  </ScrollPane>
+               </content>
+          </TitledPane>
+          <TitledPane animated="false" text="草稿">
+               <content>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" prefViewportWidth="146.0">
+                     <content>
+                        <VBox fx:id="draft_list" />
+                     </content>
+                  </ScrollPane>
+               </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+   </left>
+   <right>
+      <GridPane alignment="CENTER" hgap="10.0" vgap="10.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="393.0" minWidth="10.0" prefWidth="220.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="591.0" minWidth="10.0" prefWidth="580.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="任务名称" />
+            <TextArea fx:id="work_1_textarea" wrapText="true" GridPane.columnIndex="1" />
+            <Label text="系统名称" GridPane.rowIndex="1" />
+            <TextArea fx:id="work_2_textarea" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="工作量" GridPane.rowIndex="2" />
+            <TextArea fx:id="work_3_textarea" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="功能描述" GridPane.rowIndex="3" />
+            <TextArea fx:id="work_4_textarea" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <Button fx:id="save_draft_btn" mnemonicParsing="false" onAction="#save_draft" text="存草稿">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="submit_btn" mnemonicParsing="false" onAction="#submit" text="提交">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </GridPane>
+   </right>
+   <center>
+      <VBox maxWidth="100.0" minWidth="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

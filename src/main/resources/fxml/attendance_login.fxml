@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import org.controlsfx.control.textfield.CustomTextField?>
+<?import org.controlsfx.control.textfield.CustomPasswordField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+
+<AnchorPane prefHeight="367.0" prefWidth="419.0" xmlns="http://javafx.com/javafx/8" stylesheets="@/css/attendance_dark-theme.css" xmlns:fx="http://javafx.com/fxml/1" >
+   <children>
+      <CustomTextField fx:id="username_jfxTextfield" layoutX="95.0" layoutY="122.0" prefHeight="33.0" prefWidth="259.0" promptText="Username">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </CustomTextField>
+      <CustomPasswordField fx:id="password_jfxTextfield" layoutX="97.0" layoutY="194.0" onAction="#handleLoginEvent" prefHeight="34.0" prefWidth="259.0" promptText="Password">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </CustomPasswordField>
+      <Button layoutX="106.0" layoutY="278.0" onAction="#handleLoginEvent" prefHeight="40.0" prefWidth="90.0" text="Login" />   <!--  styleClass="login-button"  -->
+      <Button layoutX="239.0" layoutY="278.0" onAction="#handleCancelEvent" prefHeight="40.0" prefWidth="90.0" text="Cancel" />
+   </children>
+</AnchorPane>

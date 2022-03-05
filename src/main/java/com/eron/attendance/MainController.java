@@ -195,7 +195,7 @@ public class MainController implements Initializable {
         Stage webview = new Stage();
         WebView browser = new WebView();
         WebEngine webEngine = browser.getEngine();
-        webEngine.load("http://121.12.250.200:8089/");  //http://121.12.250.200:8089/
+        webEngine.load("https://www.baidu.com");  //http://121.12.250.200:8089/ 测试网页交互 
 
         Scene scene = new Scene(browser);
         webview.setScene(scene);

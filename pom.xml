@@ -125,6 +125,19 @@
         <artifactId>sqlite-jdbc</artifactId>
         <version>3.36.0.3</version>
     </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.derby/derby -->
+    <dependency>
+        <groupId>org.apache.derby</groupId>
+        <artifactId>derby</artifactId>
+        <version>10.15.2.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.apache.derby/derbyclient -->
+    <dependency>
+        <groupId>org.apache.derby</groupId>
+        <artifactId>derbyclient</artifactId>
+        <version>10.15.2.0</version>
+    </dependency>
+
     <!-- https://mvnrepository.com/artifact/commons-dbutils/commons-dbutils -->
     <dependency>
         <groupId>commons-dbutils</groupId>
@@ -137,8 +150,12 @@
         <artifactId>jsoup</artifactId>
         <version>1.14.3</version>
     </dependency>
-
-
+    <!-- https://mvnrepository.com/artifact/guru.nidi/graphviz-java -->
+    <dependency>
+        <groupId>guru.nidi</groupId>
+        <artifactId>graphviz-java</artifactId>
+        <version>0.18.1</version>
+    </dependency>
 
   </dependencies>
 

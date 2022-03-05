@@ -3,6 +3,7 @@ package com.eron.attendance;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import com.eron.attendance.dao.DerbyWorkRecordDAO;
 import com.eron.attendance.dao.SqliteWorkRecodDAO;
 
 import javafx.application.Application;
@@ -12,6 +13,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
+
 
 public class LogerCard extends Application {
 

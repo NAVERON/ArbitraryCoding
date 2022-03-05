@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.scene.control.Alert;
+
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
@@ -24,7 +25,7 @@ public class DerbyWorkRecordDAO implements WorkRecordDAO {  //不同的数据库
     private List<WorkRecord> RECORDS = new LinkedList<WorkRecord>();
 
     private String protocol = "jdbc:derby:";
-    private String dbName = "workrecords.db";
+    private String dbName = "src/main/resources/db/derby_records";
     private String createString = "CREATE TABLE workrecords ("
             + "id VARCHAR(30),"
             + "owner VARCHAR(30),"
@@ -36,18 +37,24 @@ public class DerbyWorkRecordDAO implements WorkRecordDAO {  //不同的数据库
             + "isDraft INT"
             + ")";
 
+    /**
+     * derby加载内嵌的问题无法解决，暂时搁置 
+     */
     @Override
-    public void setup() {
+    public void setup() throws InstantiationException {
         try {
+        	//Class.forName("org.apache.derby.jdbc.EmbeddedDriver").newInstance();
+        	System.out.println("正在获取链接");
             connection = DriverManager.getConnection(protocol + dbName + "; create=true");
             DatabaseMetaData dbmd = connection.getMetaData();
+            System.out.println("获取metadata : " + dbmd.toString());
             ResultSet rs = dbmd.getTables(null, null, null, new String[]{"TABLE"});
             if (!rs.next()) {
                 Alert close_database_fault = new Alert(Alert.AlertType.INFORMATION);
                 close_database_fault.setContentText("数据库正在创建表");
                 close_database_fault.showAndWait();
                 dbAccess.update(connection, createString);
-            }else{
+            } else {
                 Alert database_exist_alert = new Alert(Alert.AlertType.INFORMATION);
                 database_exist_alert.setContentText("表已经创建");
                 database_exist_alert.showAndWait();
@@ -94,7 +101,7 @@ public class DerbyWorkRecordDAO implements WorkRecordDAO {  //不同的数据库
     public long insertWorkrecord(WorkRecord workrecord) {
         try {
             connection = DriverManager.getConnection(protocol + dbName);
-            long id = dbAccess.insert(connection,
+            BigDecimal id = dbAccess.insert(connection,
                     "INSERT INTO workrecords (id, owner, work_name, system_name, work_acount, work_content, record_time, isDraft) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
                     new ScalarHandler<BigDecimal>(),
                     workrecord.getId(),
@@ -105,8 +112,8 @@ public class DerbyWorkRecordDAO implements WorkRecordDAO {  //不同的数据库
                     workrecord.getWork_content(),
                     workrecord.getRecord_time(),
                     workrecord.isDraft
-            ).longValue();
-            return id;
+            );// .longValue();
+            return id.longValue();
         } catch (SQLException ex) {
             Logger.getLogger(DerbyWorkRecordDAO.class.getName()).log(Level.SEVERE, null, ex);
         }

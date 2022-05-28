@@ -18,6 +18,7 @@ bin
 *.log
 *.db
 system
+logs
 
 # Package Files #
 *.jar

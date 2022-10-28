@@ -88,7 +88,7 @@ public class ShipLite implements Callable<String> {
     }
     
     // 终结线程池所有任务 因为单个对象中只允许一个更新循环 
-    public void terminalRunner() {
+    public void terminateRunner() {
         log.warn("termianl runner !");
         // 使用哪种方式结束上一个运行循环 ? 
         this.runnableFuture.cancel(true);  // 终结当前任务 
@@ -137,7 +137,7 @@ public class ShipLite implements Callable<String> {
         // 自动航行计算 根据当前的状态计算下一个状态 
         // 更新线程池运行 
         this.shipStatus = status;
-        this.terminalRunner();
+        this.terminateRunner();
         // 重启 
         this.init();
         

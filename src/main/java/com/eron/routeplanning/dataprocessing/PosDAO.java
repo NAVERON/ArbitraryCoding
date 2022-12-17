@@ -26,7 +26,7 @@ public class PosDAO {  //这个存储数据库不能重复运行，所以到时�
 		// TODO 加载驱动类，更换数据库时更改此处
 		try {
 			Class.forName(driver);
-			connection = DriverManager.getConnection(uri, username, password); 
+			connection = DriverManager.getConnection(uri, username, password);   // 2022.12 update, 一般情况下 客户端使用连接远程服务 或者使用内嵌入式数据库
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

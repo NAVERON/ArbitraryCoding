@@ -141,7 +141,7 @@ public class SolarSystemApp extends GameApplication {
                 image.getPixelWriter().setColor((int)p.getX()-2, (int)p.getY()+1, c);
             });
 
-        }, Duration.seconds(0.016));
+        }, Duration.seconds(0.25));
     }
 
     private void initBodies() {

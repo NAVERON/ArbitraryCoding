@@ -14,7 +14,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <source.version>17</source.version> 
     <javafx.version>17.0.1</javafx.version>
-    <fxgl.version>17</fxgl.version>
+    <fxgl.version>17.1</fxgl.version>
 
     <javafx.maven.plugin.version>0.0.8</javafx.maven.plugin.version>    
     <maven.compiler.version>3.8.1</maven.compiler.version>
@@ -72,9 +72,8 @@
     <dependency>
         <groupId>com.github.almasb</groupId>
         <artifactId>fxgl</artifactId>
-        <version>17.2</version>
+        <version>17.1</version>
     </dependency>
-
 
     <!-- https://mvnrepository.com/artifact/com.dlsc.formsfx/formsfx-core -->
     <dependency>

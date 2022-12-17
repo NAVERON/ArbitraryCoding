@@ -35,7 +35,7 @@ public class CelestialBodyComponent extends Component {
                 .rotate(view)  // 动画作用对象 旋转动作 
                 .from(new Point3D(0, 0, 0))
                 .to(new Point3D(0, 360, 0))
-                .buildAndPlay();
+                .build().start();
 
         animationBuilder()
                 .duration(Duration.seconds(data.getOrbitalPeriod() * 0.1))  // 公转周期 
@@ -44,6 +44,6 @@ public class CelestialBodyComponent extends Component {
                 .origin(new Point3D(-entity.getX(), 0, 0))
                 .from(new Point3D(0, 0, 0))
                 .to(new Point3D(0, 360, 0))
-                .buildAndPlay();
+                .build().start();
     }
 }

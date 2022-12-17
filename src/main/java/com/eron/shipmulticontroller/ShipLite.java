@@ -1,14 +1,8 @@
-package com.eron.shipmuticontroller;
+package com.eron.shipmulticontroller;
 
-import java.io.Serializable;
-import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.RunnableFuture;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -18,8 +12,6 @@ import org.slf4j.LoggerFactory;
 import com.almasb.fxgl.entity.Entity;
 
 import javafx.geometry.Point2D;
-import javafx.scene.shape.Circle;
-import javafx.scene.shape.Shape;
 
 /**
  * 基本控制单元 简化版船舶对象, 测试并发控制

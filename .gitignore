@@ -29,6 +29,5 @@ logs
 *.tar.gz
 *.rar
 
-
-
+**/db/
 

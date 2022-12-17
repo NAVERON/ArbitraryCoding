@@ -1,4 +1,4 @@
-package com.eron.shipmuticontroller;
+package com.eron.shipmulticontroller;
 
 
 

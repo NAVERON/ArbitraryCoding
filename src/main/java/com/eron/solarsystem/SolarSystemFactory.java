@@ -55,12 +55,12 @@ public class SolarSystemFactory implements EntityFactory {
 
             e.getViewComponent().addChild(torus);
 
-            animationBuilder()  // 土星环有一个倾角 
+            animationBuilder()  // 土星环有一个倾角
                     .duration(Duration.seconds(0.1))
                     .rotate(torus)  // 旋转 
                     .from(new Point3D(0, 0, 0))
                     .to(new Point3D(45, 0, 0))
-                    .buildAndPlay();
+                    .build().start();  // buildAndStart()  may be 17.2 new feature
         }
 
         if (bodyData == CelestialBody.SUN) {
